@@ -134,6 +134,7 @@ a:hover, a:active, a:focus {
   margin-right: 16px;
   font-size: 17px;
     font-family:cursive;
+    border-radius: 7px;
 
 }
 
@@ -149,6 +150,11 @@ a:hover, a:active, a:focus {
   }
   .topnav input[type=text] {
     border: 1px solid #ccc;
+      font-size: 20px;
+      width: 400px;
+      min-width: 100px;
+      padding: 5px;
+      
   }
 }
 
@@ -297,6 +303,24 @@ a:hover, a:active, a:focus {
      align-items: center;
     position: relative;
     text-align: center;
+}
+
+
+    
+
+h5.modal-title{
+    margin:auto;
+    font-family: cursive;
+    color: #DDA0DD;
+    font-size: 50px
+    
+        
+}
+
+
+
+.modalFormWrapper {
+    padding: 2rem;
 }
 
 .main-home {
@@ -474,6 +498,7 @@ a:hover, a:active, a:focus {
   padding-top: 32px;
   padding-bottom: 62px;
   margin-bottom: 32px;
+
 }
 
 .blog-post-thumb:last-child {
@@ -673,11 +698,6 @@ footer hr {
   margin-bottom: 42px;
 }
 
-footer .footer-copyright {
-  padding-top: 12px;
-}
-
-
 
 /* Back top */
 .go-top {
@@ -709,11 +729,15 @@ footer .footer-copyright {
    Social icon             
 -----------------------------------------*/
 
+
+
+
 .social-icon {
     position: relative;
     padding: 0;
     margin: 0;
     text-align: center;
+    
 }
 
 .social-icon li {
@@ -722,8 +746,6 @@ footer .footer-copyright {
 }
 
 .social-icon li a {
-    border: 2px solid #292929;
-    color: #292929;
     border-radius: 100px;
     cursor: pointer;
     font-size: 16px;
