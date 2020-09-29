@@ -31,7 +31,7 @@
 
 <!-- Navigation section  -->
 
-<div class="navbar navbar-default navbar-static-top" role="navigation"> 
+<div class="navbar navbar-default navbar-static-top" role="navigation">
      <div class="container">
 
           <div class="navbar-header">
@@ -51,10 +51,11 @@
                </ul>
           </div>
 <div class="topnav">
-   <form class="example" action="action_page.php">
-  <input type="text" placeholder="How can we assist you ?" name="search">
+    <form class="example" action="">
+  <input type="text" placeholder="How can we assist you ? " name="search">
   <button type="submit"><i class="fa fa-search"></i></button>
 </form>
+    </div>
   </div>
 </div>
 
@@ -85,7 +86,9 @@
       <div class="modal-header">
         <h5 class="modal-title" id="contentLabel">Come on, Let's roll in!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
         </button>
+         
       </div>
       <div class="modal-body">
         <div class="container-fluid">
@@ -93,7 +96,7 @@
                  <div class="row">
                      <div class="col-sm-12">
           <div class="modalFormWrapper"> 
-              <form>
+              <form id ="whatIs">
   <div class="form-group">
     <label for="forName">What's your name?</label>
     <input type="text" class="form-control" id="formName" placeholder="Full Name(e.g. Krischal Lageju)">
@@ -101,6 +104,10 @@
   <div class="form-group">
     <label for="formEmail">Where should we know eachother ?</label>
     <input type="text" class="form-control" id="formEmail" placeholder="Email(for e.g. krisclagej22@yahoo.com)">
+          <div class="modal-footer">
+         <input type = "submit" value = "Sign up!">
+        
+      </div>
   </div>
 </form>
                      </div>
@@ -109,10 +116,7 @@
             
           </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Done!</button>
-        
-      </div>
+
     </div>
   </div>
 </div>
@@ -216,8 +220,8 @@
                     <ul class="social-icon">
                          <li><a href="https://www.facebook.com/iso.smsu.7" class="fa fa-facebook-square fa-3x" target="_blank"></a></li>
                          <li><a href="https://www.instagram.com/iso_smsu/?hl=en" class="fa fa-instagram" target ="_blank"></a></li>
-                         <li><a href="https://twitter.com/enactus" class="fa fa-twitter" target="_blank"></a></li>
-                         <li><a href="https://www.smsu.edu/campuslife/centerforinternationaleducation/index.html" class="fa fa-google" target="_blank"></a></li>
+                         <li><a href="https://twitter.com/enactus" class="fa fa-twitter" target=""></a></li>
+                         <li><a href="https://www.smsu.edu/campuslife/centerforinternationaleducation/index.html" target="" class="fa fa-google"></a></li>
                     </ul>
                </div>
                

@@ -380,9 +380,15 @@ h5.modal-title{
     color: #DDA0DD;
     font-size: 50px
     
-        
+            
 }
 
+.modal-footer{
+    font-family: fantasy;
+    color:chocolate;
+    margin-top: 10px;
+    font-size: 20px;
+}
 
 
 .modalFormWrapper {
