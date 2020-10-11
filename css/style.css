@@ -136,12 +136,19 @@ form.example input[type=text] {
   padding: 10px;
   font-size: 17px;
     border-style: hidden;
-    width: 30%;
-  background: #f1f1f1;
+      width: 200px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+     background: #f1f1f1;
     font-family: cursive;
     border-style: outset;
     border-color: aliceblue;
 }
+/* When the input field gets focus, change its width to 100% */
+form.example input[type=text]:focus {
+  width: 70%;
+}
+
 
 /* Style the submit button */
 form.example button {
