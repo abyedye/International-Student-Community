@@ -61,11 +61,13 @@ var form = document.getElementById('whatIs');
 
 form.addEventListener('submit', function(event) {
     if (!formName.value || !formEmail.value) {
-        alert("Opsy! Field cannot be empty.")
+        alert("Opsy! Field looks empty. Type in")
     } else {
         alert("You are now part of family!")
         
     }
 });
-            
+
+
+
 
