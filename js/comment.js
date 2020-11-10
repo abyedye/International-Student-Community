@@ -1,11 +1,12 @@
+
 function buildComments(){
     var commentList = [ {
 name:  "abinash", 
 date: "1st jan",
 comment: "hello"} , {
-name:"abinash",
-date: "1st jan",
-comment: "hello"
+name:"Krsichal",
+date: "2 days ago",
+comment: "Hello"
 } ];
   console.log("test");
     var div = document.getElementById("comms"); /* langdiv replace by comment division */
@@ -21,3 +22,4 @@ comment: "hello"
 }
 
 buildComments()
+
