@@ -32,12 +32,33 @@
             email : document.getElementById("emailID").value,
             message : document.getElementById("Message").value,
        });
+       getData();
   }
+  function getData() {
+       firebase.database().ref('/').once('value', function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+                 var childKey = childSnapshot.key;
+                 var childData = childSnapshot.val();
+                 document.getElementById("data").innerHTML = childData['name'] + "," +  childData['email'] + "," + childData['message'];
+            })
+       })
+  }
+  
+//   function getData() {
+//             firebase.database().ref('/').once('value', function(snapshot) {
+//                  snapshot.forEach(function(childSnapshot) {
+//                       var childKey = childSnapshot.key;
+//                       var childData = childSnapshot.value();
+//                       document.getElementById("data").innerHTML = childData['name'] + "," +  childData['emaild'] + "," + childData['message'];
+//                  })
+//             })
+//        }
 </script>
 <input type="text" placeholder="name" id="nameField"><br>
 <input type="text" placeholder="email" id="emailID"><br>
 <input type="text" placeholder="Message" id="Message">
 <button onclick="writeData()">Submit</button>
+<p id="data"></p>
 
     </body>
 </html>
