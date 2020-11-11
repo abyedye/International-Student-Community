@@ -16,6 +16,8 @@
 
 <!-- Main css -->
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/com.css">
+
 <link href="https://fonts.googleapis.com/css?family=Lora|Merriweather:300,400" rel="stylesheet">
 
 </head>
@@ -130,7 +132,7 @@
 
                          <div class="blog-comment">
                               <h3>Comments</h3>
-                             <div id = "comms">
+                          
                                    <div class="media">
                                         <div class="media-object pull-left">
                                              <img src="images/comment-image1.jpg" class="img-responsive img-circle" alt="Blog Image 11">
@@ -171,20 +173,26 @@
                                              <p>I am selling some stuffs as i am moving out to new place. Anyone interested can dm me.</p>
                                         </div>
                                    </div>
-                         </div>
+                     
                         </div>
 
                          <div data-role="fieldcontain" class="blog-comment-form" id = "langDiv">
         
                               <h3>Leave a Comment</h3>
+<!--
                                    <form action="#" method="post">
-                           	 	 	 	<input type="text" class="form-control" placeholder="Name" name="name" required>
-                                        <input type="email" class="form-control" placeholder="Email" name="email" required>
-                                        <textarea name="message" rows="5" class="form-control" id="message" placeholder="Message" message="message" required="required"></textarea>
+                           	 	 	 	<input type="text" class="form-control" placeholder="Name" name="name" id = "nameField" required >
+                                        <input type="email" class="form-control" placeholder="Email" name="email" id = "emailID" required >
+                                        <textarea name="message" rows="5" class="form-control" id="Message" placeholder="Comment" message="message" required="required"></textarea>
                                         <div class="col-md-3 col-sm-4">
-                                             <input name="submit" type="submit" class="form-control" id="submit" value="Post Your Comment">
+                                             <input onclick="writeData()" name="submit" type="submit" class="form-control" id="submit" value="Post Your Comment">
                                         </div>
                                    </form>
+-->
+                             <input type="text" placeholder="Full Name" id="nameField"><br>
+                             <input type="text" placeholder="Email address" id="emailID"><br>
+                             <input type="text" placeholder="Message" id="Message">
+                             <button onclick="writeData()">Comment</button>
                          </div>
                     </div>
           </div>
@@ -202,11 +210,47 @@
 
 <!-- SCRIPTS -->
 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDV9yHaVx82_dqatn5Q0sMJfUjKmC42zTI",
+    authDomain: "fir-auction-8a619.firebaseapp.com",
+    databaseURL: "https://fir-auction-8a619.firebaseio.com",
+    projectId: "fir-auction-8a619",
+    storageBucket: "fir-auction-8a619.appspot.com",
+    messagingSenderId: "13612349455",
+    appId: "1:13612349455:web:36f1de033201fd7d8c4b7a",
+    measurementId: "G-Q1YNJXBVK0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+     function writeData() {
+       firebase.database().ref("User").set({
+            name: document.getElementById("nameField").value,
+            email : document.getElementById("emailID").value,
+            message : document.getElementById("Message").value,
+       });
+  }
+    
+</script>
+      
+
+
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.parallax.js"></script>
 <script src="js/custom.js"></script>
-<script src="js/comment.js"></script>
+
 
 </body>
 </html>
