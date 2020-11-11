@@ -1,0 +1,43 @@
+<html>
+    <body>
+              
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyB2KypmeXMx5UEfnU6V-2Z6t7IzGwbFM6w",
+    authDomain: "web-dev-f6760.firebaseapp.com",
+    databaseURL: "https://web-dev-f6760.firebaseio.com",
+    projectId: "web-dev-f6760",
+    storageBucket: "web-dev-f6760.appspot.com",
+    messagingSenderId: "891920411261",
+    appId: "1:891920411261:web:4a9c9b4f8176d853b51f14",
+    measurementId: "G-9HF2RB6YJT"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  function writeData() {
+       firebase.database().ref("User").set({
+            name: document.getElementById("nameField").value,
+            email : document.getElementById("emailID").value,
+            message : document.getElementById("Message").value,
+       });
+  }
+</script>
+<input type="text" placeholder="name" id="nameField"><br>
+<input type="text" placeholder="email" id="emailID"><br>
+<input type="text" placeholder="Message" id="Message">
+<button onclick="writeData()">Submit</button>
+
+    </body>
+</html>
