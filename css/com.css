@@ -1,32 +1,28 @@
-
-
-#nameField
-{
-
-  margin-bottom: 1em;
-font-family: "Ubuntu", serif;
-
-    
+#nameField, #emailID, #Message {
+    margin-bottom: 5px;
+  padding: 10px;
+  font-size: 17px;
+    border-style: hidden;
+      width: 200px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+     background: #f1f1f1;
+    font-family: cursive;
+    border-style: outset;
+    border-color: aliceblue;
 }
 
 
-
-#emailID
-{
-
-  margin-bottom: 1em;
-font-family: "Ubuntu", serif;
-
-    
-}
-
-
-
-#emailID
-{
-
-  margin-bottom: 1em;
-font-family: "Ubuntu", serif;
-
-    
+ @media screen and (max-width: 600px) {
+        margin-bottom: 5px;
+  padding: 10px;
+  font-size: 17px;
+    border-style: hidden;
+      width: 200px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+     background: #f1f1f1;
+    font-family: cursive;
+    border-style: outset;
+    border-color: aliceblue;
 }

@@ -183,15 +183,15 @@
                               <h3>Leave a Comment</h3>
 <!--
                                    <form action="#" method="post">
-<<<<<<< HEAD
+
                            	 	 	 	<input type="text" class="form-control" placeholder="Name" name="name" id = "nameField" required >
                                         <input type="email" class="form-control" placeholder="Email" name="email" id = "emailID" required >
                                         <textarea name="message" rows="5" class="form-control" id="Message" placeholder="Comment" message="message" required="required"></textarea>
-=======
+
                            	 	 	 	<input type="text" class="form-control" placeholder="Name" name="name" id="textfield" required>
                                         <input type="email" class="form-control" placeholder="Email" name="email" id="emailID" required>
                                         <textarea name="message" rows="5" class="form-control" id="message" placeholder="Message" message="message"  required="required"></textarea>
->>>>>>> dbe2906ba8c41eb189d9c28868dda8155ad1aa9e
+
                                         <div class="col-md-3 col-sm-4">
                                              <input onclick="writeData()" name="submit" type="submit" class="form-control" id="submit" value="Post Your Comment">
                                         </div>
@@ -201,6 +201,7 @@
                              <input type="text" placeholder="Email address" id="emailID"><br>
                              <input type="text" placeholder="Message" id="Message">
                              <button onclick="writeData()">Comment</button>
+                             <p id = "data"></p>
                          </div>
                     </div>
           </div>
@@ -239,18 +240,31 @@
     appId: "1:13612349455:web:36f1de033201fd7d8c4b7a",
     measurementId: "G-Q1YNJXBVK0"
   };
-  // Initialize Firebase
+// Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-     function writeData() {
+
+  function writeData() {
        firebase.database().ref("User").set({
             name: document.getElementById("nameField").value,
             email : document.getElementById("emailID").value,
             message : document.getElementById("Message").value,
        });
+       getData();
   }
-    
+  function getData() {
+       firebase.database().ref('/').once('value', function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+                 var childKey = childSnapshot.key;
+                 var childData = childSnapshot.val();
+                 document.getElementById("data").innerHTML = childData['name'] + "," +  childData['email'] + "," + childData['essage'];
+            })
+       })
+  }
+  
+        
 </script>
+
       
 
 
