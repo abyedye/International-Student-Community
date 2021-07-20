@@ -45,3 +45,14 @@ var firebaseConfig = {
             message : document.getElementById("Message").value,
        });
   }
+
+   function getData() {
+            var leadsRef = database.ref('comments');
+            leadsRef.on('value', function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+            var childData = childSnapshot.val();
+                console.log(childData);
+    });
+});
+       }
+       
